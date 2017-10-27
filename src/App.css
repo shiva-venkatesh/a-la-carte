@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.App-header {
+  background-color: #EFEFEF;
+  height: 25px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  display: inline;
+  font-weight: 600;
+  font-family: 'Indie Flower', cursive;
+  color: black;
+  font-size: 25px;
+}
