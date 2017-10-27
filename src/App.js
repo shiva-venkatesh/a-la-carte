@@ -1,9 +1,33 @@
 import React, { Component } from 'react'
-import './App.css'
+import axios from 'axios'
 
+import './App.css'
 import Card from './components/card.js'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: []
+    }
+  }
+
+  componentWillMount() {
+    axios.get('https://api.myjson.com/bins/qhnfp')
+      .then((response) => {
+        console.log(response.data)
+        this.setState({items: response.data})
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  renderItems() {
+
+  }
+
   render() {
     return (
       <div className="app">
