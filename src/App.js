@@ -42,6 +42,7 @@ class App extends Component {
 
   addItemToCart(item) { 
     console.log(item.name + ' clicked')
+    console.log(this.state.cartItems)
     this.setState({
       cartItems: [...this.state.cartItems, item]
     })
@@ -64,7 +65,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">A la carte cartitems</h1>
+          <h1 className="app-title">À la carte cart items: {this.state.cartItems.length}</h1>
         </div>
         <div className="container">
           <div className="page-heading">
