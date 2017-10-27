@@ -91,7 +91,7 @@ class App extends Component {
         <div className="page-heading">
           <p className="cart-page-heading">
             <i className="fa fa-chevron-left" aria-hidden="true"></i>
-            {' ' + 'Order Summary'}
+            {' Order Summary'}
           </p>
         </div>
         <div className="summary-body">
@@ -109,9 +109,24 @@ class App extends Component {
           <div className="col-4x">
             <div className="sticky-box">
               <div className="sticky-body">
-                <p className="left">Total</p>
-                <p className="left">Items</p>
-                <p className="left">Discount</p>
+                <div className="total-row">
+                  <p className="left">Total</p>
+                  <p className="right">500</p>
+                </div>
+                <div className="item-count-row">
+                  <p className="left">{'Items(' + this.state.cartItems.length + ')'}</p>
+                  <p className="right">600</p>
+                </div>
+                <div className="discount-row">
+                  <p className="left">Discount</p>
+                  <p className="right">100</p>
+                </div>
+                <div className="checkout-footer">
+                  <div className="order-total">
+                    <p className="left">Order</p>
+                    <p className="right">1000</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
