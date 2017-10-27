@@ -13,7 +13,7 @@
 
 .page-heading {
   width: inherit;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   display: flex;
   align-items: center;
 }
@@ -63,4 +63,53 @@
   flex-direction: column;
   margin: 0 auto;
   width: 1000px;
+}
+
+.checkout-container {
+  display: flex;
+}
+
+.left-container {
+  display: flex;
+  flex: 2 0 0;
+}
+
+.right-container {
+  display: flex;
+  flex: 1 0 0;
+}
+
+.col-8x {
+   display: inline-block;
+   width: 700px;
+}
+
+.col-4x {
+  display: inline-block;
+  padding: 10px;
+  width: 300px;
+}
+
+.summary-body {
+  display: flex;
+}
+
+.summary-headings {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+}
+
+.sticky-box {
+  top: 0;
+  position: sticky;
+  padding-left: 8px;
+  width: 300px;
+  border: 1px solid lightgray;
+}
+
+.sticky-body {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
 }

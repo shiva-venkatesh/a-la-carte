@@ -10,10 +10,13 @@ class App extends Component {
     super(props)
     this.state = {
       items: [],
-      cartItems: []
+      cartItems: [],
+      cartView: false
     }
     this.renderCartButton = this.renderCartButton.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
+    this.renderCartView = this.renderCartView.bind(this)
+    this.renderListingPage = this.renderListingPage.bind(this)
   }
 
   componentWillMount() {
@@ -32,7 +35,7 @@ class App extends Component {
     }
     return(
         <div className="go-to-cart right">
-          <button className="navigate-to-cart" onClick={() => { console.log('You want to go to cart ?') }}>
+          <button className="navigate-to-cart" onClick={() => { this.setState({cartView: true}) }}>
             Go to cart
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           </button>
@@ -48,7 +51,10 @@ class App extends Component {
     })
   }
 
-  render() {
+  renderListingPage() {
+    if(this.state.cartView) {
+      return false
+    }
     const renderItem = this.state.items.map((item) => {
       return(
             <Card 
@@ -61,12 +67,7 @@ class App extends Component {
             /> 
         )
     })
-
-    return (
-      <div className="app">
-        <div className="app-header">
-          <h1 className="app-title">À la carte</h1>
-        </div>
+    return(
         <div className="container">
           <div className="page-heading">
             <p className="cart-page-heading">
@@ -78,6 +79,55 @@ class App extends Component {
             {renderItem}
           </div>
         </div>
+      )
+  }
+
+  renderCartView() {
+    if(!this.state.cartView) {
+      return false
+    }
+    return(
+      <div className="container checkout-container">
+        <div className="page-heading">
+          <p className="cart-page-heading">
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+            {' ' + 'Order Summary'}
+          </p>
+        </div>
+        <div className="summary-body">
+          <div className="col-8x">
+            <div className="summary-headings">
+              <div className="left-container">
+                <p>{'Items(' + this.state.cartItems.length + ')'}</p>
+                <p className="right">{'Qty'}</p>
+              </div>
+              <div className="right-container right">
+                <p className="right">{'Price'}</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-4x">
+            <div className="sticky-box">
+              <div className="sticky-body">
+                <p className="left">Total</p>
+                <p className="left">Items</p>
+                <p className="left">Discount</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <div className="app-header">
+          <h1 className="app-title">À la carte</h1>
+        </div>
+        {this.renderCartView()}
+        {this.renderListingPage()}
       </div>
     );
   }
