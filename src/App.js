@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">À la carte cart items: {this.state.cartItems.length}</h1>
+          <h1 className="app-title">À la carte</h1>
         </div>
         <div className="container">
           <div className="page-heading">
