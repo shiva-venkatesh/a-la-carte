@@ -6,18 +6,24 @@ const Card = ({cardText, cardDescription, cardImg, CTAbuttonText, labelText, but
 	return(
 		<div className="card-element">
 			<div className="card-image">
-				<img src={cardImg} alt={cardText} />
+				<img className="card-img" src={cardImg} alt={cardText} />
 			</div>
 			<div className="card-footer">
-				<p className="card-text footer-text">
-					{cardText}
-				</p>
-				<p className="card-description footer-text">
-					{cardDescription}
-				</p>
-				<button className="card-CTA-button" onClick={buttonHandler}>
-					{labelText}
-				</button>
+				<div className="footer-text">
+					<div className="card-text">
+						{cardText}
+					</div>
+				</div>
+				<div className="second-row">
+					<div className="card-description">
+						<p className="desc left">
+							{cardDescription}
+						</p>
+					</div>
+					<button className="card-CTA-button right" onClick={buttonHandler}>
+						{labelText}
+					</button>
+				</div>
 			</div>
 		</div>
 		)
