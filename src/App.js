@@ -9,14 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: []
+      items: [],
+      cartItems: []
     }
   }
 
   componentWillMount() {
     axios.get('https://api.myjson.com/bins/qhnfp')
       .then((response) => {
-        console.log(response.data)
         this.setState({items: response.data})
       })
       .catch((err) => {
@@ -24,11 +24,34 @@ class App extends Component {
       })
   }
 
-  renderItems() {
-
+  renderCartButton() {
+    if(!this.state.cartItems.length) {
+      return false
+    }
+    return(
+        <div className="go-to-cart right">
+          <button className="navigate-to-cart" onClick={() => { console.log('You want to go to cart ?') }}>
+            Go to cart
+          </button>
+        </div>
+      )
   }
 
   render() {
+    const renderItem = this.state.items.map((item) => {
+      return(
+            <Card 
+              cardText={item.name}
+              cardDescription={item.price}
+              cardImg={item.img_url}
+              CTAbuttonText={''}
+              labelText={'Add to cart'}
+              buttonHandler={(e) => { console.log('clicked') }}
+              key={item.id}
+            /> 
+        )
+    })
+
     return (
       <div className="app">
         <div className="app-header">
@@ -39,16 +62,10 @@ class App extends Component {
             <p className="cart-page-heading">
               All Items
             </p>
+            {this.renderCartButton()}
           </div>
           <div className="cart-page">
-            <Card 
-              cardText={'Item 1'}
-              cardDescription={'$25'}
-              cardImg={'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg'}
-              CTAbuttonText={''} 
-              labelText={'Add to cart'}
-              buttonHandler={(e) => { console.log('clicked') }}
-            /> 
+            {renderItem}
           </div>
         </div>
       </div>

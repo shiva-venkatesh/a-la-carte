@@ -14,10 +14,34 @@
 .page-heading {
   width: inherit;
   border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+
+.go-to-cart {
+  float: right;
+}
+
+.navigate-to-cart {
+  margin-right: 2px;
+  border-radius: 4px;
+  background-color: #0099ff;
+  color: #ffffff;
+  padding: 5px;
+  width: 90px;
+  height: 36px;
+  font-size: 12px;
 }
 
 .cart-page {
-  padding-top: 10px;
+   padding-top: 10px;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   flex-wrap: wrap;
+   flex-flow: row wrap;
+   align-content: flex-end;
+   justify-content: space-between;
 }
 
 .cart-page-heading {
