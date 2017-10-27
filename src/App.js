@@ -12,6 +12,7 @@ class App extends Component {
       items: [],
       cartItems: []
     }
+    this.renderCartButton = this.renderCartButton.bind(this)
   }
 
   componentWillMount() {
@@ -32,6 +33,7 @@ class App extends Component {
         <div className="go-to-cart right">
           <button className="navigate-to-cart" onClick={() => { console.log('You want to go to cart ?') }}>
             Go to cart
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           </button>
         </div>
       )
