@@ -1,0 +1,42 @@
+.card-element {
+	height: 250px;
+	width: 235px;
+	border: 3px solid #EFEFEF;
+}
+
+.card-image {
+	/*width: inherit;*/
+	display: inline;
+	height: 200px;
+}
+
+.card-footer {
+	display: inline;
+	/*width: inherit;*/
+	height: 50px;
+	background-color: #EFEFEF;
+}
+
+.footer-text {
+	
+}
+
+.card-CTA-button {
+	border-radius: 4px;
+	background-color:  #EFEFEF;
+	color: #0099ff;
+	padding: 5px;
+	width: 90px;
+	height: 36px;
+	font-size: 12px;
+}
+
+.card-CTA-button:hover {
+	border-radius: 4px;
+	background-color: #0099ff;
+	color: #ffffff;
+	padding: 5px;
+	width: 90px;
+	height: 36px;
+	font-size: 12px;
+}
