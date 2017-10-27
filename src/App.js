@@ -6,13 +6,17 @@ import Card from './components/card.js'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1 className="App-title">A la carte</h1>
+      <div className="app">
+        <div className="app-header">
+          <h1 className="app-title">A la carte</h1>
         </div>
         <div className="container">
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
+          <div className="page-heading">
+            <p className="cart-page-heading">
+              All Items
+            </p>
+          </div>
+          <div className="cart-page">
             <Card 
               cardText={'Item 1'}
               cardDescription={'$25'}
@@ -21,7 +25,7 @@ class App extends Component {
               labelText={'Add to cart'}
               buttonHandler={(e) => { console.log('clicked') }}
             /> 
-          </p>
+          </div>
         </div>
       </div>
     );
