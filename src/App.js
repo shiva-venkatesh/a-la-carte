@@ -13,6 +13,7 @@ class App extends Component {
       cartItems: []
     }
     this.renderCartButton = this.renderCartButton.bind(this)
+    this.addItemToCart = this.addItemToCart.bind(this)
   }
 
   componentWillMount() {
@@ -39,16 +40,22 @@ class App extends Component {
       )
   }
 
+  addItemToCart(item) { 
+    console.log(item.name + ' clicked')
+    this.setState({
+      cartItems: [...this.state.cartItems, item]
+    })
+  }
+
   render() {
     const renderItem = this.state.items.map((item) => {
       return(
             <Card 
               cardText={item.name}
-              cardDescription={item.price}
+              cardDescription={'$' + item.price}
               cardImg={item.img_url}
-              CTAbuttonText={''}
               labelText={'Add to cart'}
-              buttonHandler={(e) => { console.log('clicked') }}
+              buttonHandler={() => {this.addItemToCart(item)}}
               key={item.id}
             /> 
         )
@@ -57,7 +64,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">A la carte</h1>
+          <h1 className="app-title">A la carte cartitems</h1>
         </div>
         <div className="container">
           <div className="page-heading">

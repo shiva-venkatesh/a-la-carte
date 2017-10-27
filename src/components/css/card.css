@@ -51,6 +51,7 @@
 	width: 90px;
 	height: 36px;
 	font-size: 12px;
+	outline: 0;
 }
 
 .card-CTA-button:hover {
@@ -62,6 +63,7 @@
 	width: 90px;
 	height: 36px;
 	font-size: 12px;
+	outline: 0;
 }
 
 .left {

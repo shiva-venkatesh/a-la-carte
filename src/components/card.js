@@ -2,7 +2,7 @@ import React from 'react'
 
 import './css/card.css'
 
-const Card = ({cardText, cardDescription, cardImg, CTAbuttonText, labelText, buttonHandler}) => {
+const Card = ({cardText, cardDescription, cardImg, labelText, buttonHandler}) => {
 	return(
 		<div className="card-element">
 			<div className="card-image">
