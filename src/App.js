@@ -12,12 +12,14 @@ class App extends Component {
     this.state = {
       items: [],
       cartItems: [],
-      cartView: false
+      cartView: false,
+      totalDiscount: 0
     }
     this.renderCartButton = this.renderCartButton.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
     this.renderCartView = this.renderCartView.bind(this)
     this.renderListingPage = this.renderListingPage.bind(this)
+    this.updateTotalDiscount = this.updateTotalDiscount.bind(this)
   }
 
   componentWillMount() {
@@ -36,7 +38,10 @@ class App extends Component {
     }
     return(
         <div className="go-to-cart right">
-          <button className="navigate-to-cart" onClick={() => { this.setState({cartView: true}) }}>
+          <button className="navigate-to-cart" onClick={() => { 
+              this.updateTotalDiscount()
+              this.setState({cartView: true})
+            }}>
             Go to cart
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           </button>
@@ -49,6 +54,18 @@ class App extends Component {
     console.log(this.state.cartItems)
     this.setState({
       cartItems: [...this.state.cartItems, item]
+    })
+  }
+
+  updateTotalDiscount() {
+    let totalDiscount = 0
+    let itemDiscount
+    const getCartItem = this.state.cartItems.map((cartItem) => {
+      return(
+          itemDiscount = (cartItem.discount)*(cartItem.price)/100,
+          totalDiscount = totalDiscount + itemDiscount,
+          this.setState({totalDiscount: totalDiscount})
+        )
     })
   }
 
@@ -84,11 +101,12 @@ class App extends Component {
   }
 
   renderCartView() {
+    console.log(this.state.totalDiscount)
     if(!this.state.cartView) {
       return false
     }
     return(
-      <CartView cartItems={this.state.cartItems} />
+      <CartView cartItems={this.state.cartItems} totalDiscount={this.state.totalDiscount} />
     )
   }
 

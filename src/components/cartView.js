@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 export default class CartView extends Component {
 
 	static propTypes = {
-		cartItems: PropTypes.array
+		cartItems: PropTypes.array,
+		totalDiscount: PropTypes.number
 	}
 
 	render() {
@@ -41,7 +42,7 @@ export default class CartView extends Component {
                 </div>
                 <div className="discount-row">
                   <p className="left">Discount</p>
-                  <p className="right">100</p>
+                  <p className="right">{this.props.totalDiscount}</p>
                 </div>
                 <div className="checkout-footer">
                   <div className="order-total">
