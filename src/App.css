@@ -95,6 +95,7 @@
 }
 
 .summary-headings {
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid lightgray;
@@ -114,7 +115,7 @@
   margin-left: 10px;
 }
 
-.total-row, .item-count-row, .discount-row, .order-total {
+.total-row, .item-count-row, .discount-row, .order-total, .type-discount-row {
   display: flex;
   flex-direction: row;
   margin-right: 15px;
@@ -122,4 +123,8 @@
 
 .order-total {
   border-top: 1px solid lightgray;
+}
+
+.total-row {
+  border-bottom: 1px solid lightgray;
 }

@@ -13,13 +13,15 @@ class App extends Component {
       items: [],
       cartItems: [],
       cartView: false,
-      totalDiscount: 0
+      totalDiscount: 0,
+      totalBillAmount: 0,
+      totalTypeDiscount: 0
     }
     this.renderCartButton = this.renderCartButton.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
     this.renderCartView = this.renderCartView.bind(this)
     this.renderListingPage = this.renderListingPage.bind(this)
-    this.updateTotalDiscount = this.updateTotalDiscount.bind(this)
+    this.updateBill = this.updateBill.bind(this)
   }
 
   componentWillMount() {
@@ -39,7 +41,7 @@ class App extends Component {
     return(
         <div className="go-to-cart right">
           <button className="navigate-to-cart" onClick={() => { 
-              this.updateTotalDiscount()
+              this.updateBill()
               this.setState({cartView: true})
             }}>
             Go to cart
@@ -57,14 +59,24 @@ class App extends Component {
     })
   }
 
-  updateTotalDiscount() {
+  updateBill() {
     let totalDiscount = 0
+    let totalBillAmount = 0
+    let totalTypeDiscount = 0
     let itemDiscount
     const getCartItem = this.state.cartItems.map((cartItem) => {
+      if(cartItem.type==='fiction') {
+        totalTypeDiscount = totalTypeDiscount + (0.15*(cartItem.price))
+      }
       return(
+          totalBillAmount = totalBillAmount + cartItem.price,
           itemDiscount = (cartItem.discount)*(cartItem.price)/100,
           totalDiscount = totalDiscount + itemDiscount,
-          this.setState({totalDiscount: totalDiscount})
+          this.setState({
+            totalDiscount: totalDiscount,
+            totalBillAmount: totalBillAmount,
+            totalTypeDiscount: totalTypeDiscount
+          })
         )
     })
   }
@@ -106,7 +118,12 @@ class App extends Component {
       return false
     }
     return(
-      <CartView cartItems={this.state.cartItems} totalDiscount={this.state.totalDiscount} />
+      <CartView
+        cartItems={this.state.cartItems}
+        totalDiscount={this.state.totalDiscount}
+        totalBillAmount={this.state.totalBillAmount}
+        totalTypeDiscount={this.state.totalTypeDiscount}
+      />
     )
   }
 

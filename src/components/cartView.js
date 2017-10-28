@@ -3,9 +3,15 @@ import PropTypes from 'prop-types'
 
 export default class CartView extends Component {
 
+  state = {
+    finalPrice: this.props.totalBillAmount - this.props.totalDiscount - this.props.totalTypeDiscount
+  }
+
 	static propTypes = {
 		cartItems: PropTypes.array,
-		totalDiscount: PropTypes.number
+    totalDiscount: PropTypes.number,
+    totalBillAmount: PropTypes.number,
+		totalTypeDiscount: PropTypes.number
 	}
 
 	render() {
@@ -34,20 +40,23 @@ export default class CartView extends Component {
               <div className="sticky-body">
                 <div className="total-row">
                   <p className="left">Total</p>
-                  <p className="right">500</p>
                 </div>
                 <div className="item-count-row">
                   <p className="left">{'Items(' + this.props.cartItems.length + ')'}</p>
-                  <p className="right">600</p>
+                  <p className="right">{'$' + this.props.totalBillAmount}</p>
                 </div>
                 <div className="discount-row">
                   <p className="left">Discount</p>
-                  <p className="right">{this.props.totalDiscount}</p>
+                  <p className="right">{'$' + this.props.totalDiscount}</p>
+                </div>
+                <div className="type-discount-row">
+                  <p className="left">Type discount</p>
+                  <p className="right">{'$' + this.props.totalTypeDiscount}</p>
                 </div>
                 <div className="checkout-footer">
                   <div className="order-total">
-                    <p className="left">Order</p>
-                    <p className="right">1000</p>
+                    <p className="left">Order total</p>
+                    <p className="right">{'$' + this.state.finalPrice}</p>
                   </div>
                 </div>
               </div>
