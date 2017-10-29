@@ -10,7 +10,7 @@ After this, to run the app on port 3000, do a `npm start` or `yarn start`. The w
 ## Deployment
 
 This app is deployed on heroku.
-The URL for the deployed version is : https://github-issues-redesign.herokuapp.com.
+The URL for the deployed version is : https://a-lacarte.herokuapp.com/.
 
 ## Built With
 
