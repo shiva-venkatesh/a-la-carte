@@ -101,6 +101,13 @@
   border-bottom: 1px solid lightgray;
 }
 
+.cart-item {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;  
+}
+
 .sticky-box {
   top: 0;
   position: sticky;

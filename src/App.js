@@ -119,6 +119,7 @@ class App extends Component {
     }
     return(
       <CartView
+        items={this.state.items}
         cartItems={this.state.cartItems}
         totalDiscount={this.state.totalDiscount}
         totalBillAmount={this.state.totalBillAmount}

@@ -3,18 +3,40 @@ import PropTypes from 'prop-types'
 
 export default class CartView extends Component {
 
-  state = {
-    finalPrice: this.props.totalBillAmount - this.props.totalDiscount - this.props.totalTypeDiscount
+  constructor(props) {
+    super(props)
+    this.state = {
+      finalPrice: this.props.totalBillAmount - this.props.totalDiscount - this.props.totalTypeDiscount
+    }
   }
 
 	static propTypes = {
-		cartItems: PropTypes.array,
+    cartItems: PropTypes.array,
+		items: PropTypes.array,
     totalDiscount: PropTypes.number,
     totalBillAmount: PropTypes.number,
 		totalTypeDiscount: PropTypes.number
 	}
 
 	render() {
+    const fetchCartItems = this.props.items.map((item) => {
+      let cartItemQty = this.props.cartItems.reduce(function (n, cartItem2) {
+          return n + (cartItem2.id === item.id);
+      }, 0);
+      console.log(item.name + ' ' + cartItemQty)
+      return(
+          <div className="cart-item fadeIn">
+              <div className="left-container">
+                <p>{item.name}</p>
+                <p className="right">{cartItemQty}</p>
+              </div>
+              <div className="right-container right">
+                <p className="right">{item.price}</p>
+              </div>
+          </div>
+        )
+    })
+
 		return(
       <div className="container checkout-container">
         <div className="page-heading">
@@ -34,6 +56,7 @@ export default class CartView extends Component {
                 <p className="right">{'Price'}</p>
               </div>
             </div>
+            {fetchCartItems}
           </div>
           <div className="col-4x">
             <div className="sticky-box">
