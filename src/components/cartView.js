@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import './css/cartView.css'
 
@@ -21,11 +22,14 @@ export default class CartView extends Component {
 	}
 
 	render() {
-    const fetchCartItems = this.props.items.map((item) => {
+    let distinctCartItems = []
+    distinctCartItems = _.uniq(this.props.cartItems)
+    // This step finds the all the distinct cart items as multiple instances of an item are stored as multiple objects in this.props.cartItems
+ 
+    const fetchCartItems = distinctCartItems.map((item) => {
       let cartItemQty = this.props.cartItems.reduce(function (n, cartItem2) {
           return n + (cartItem2.id === item.id);
       }, 0);
-      console.log(item.name + ' ' + cartItemQty)
       return(
           <div className="cart-item fadeIn">
               <div className="left-container">
@@ -73,11 +77,11 @@ export default class CartView extends Component {
                 </div>
                 <div className="discount-row">
                   <p className="left">Discount</p>
-                  <p className="right">{'$' + this.props.totalDiscount}</p>
+                  <p className="right">{'- $' + this.props.totalDiscount}</p>
                 </div>
                 <div className="type-discount-row">
                   <p className="left">Type discount</p>
-                  <p className="right">{'$' + this.props.totalTypeDiscount}</p>
+                  <p className="right">{'- $' + this.props.totalTypeDiscount}</p>
                 </div>
                 <div className="checkout-footer">
                   <div className="order-total">

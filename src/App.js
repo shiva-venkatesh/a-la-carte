@@ -40,6 +40,9 @@ class App extends Component {
     }
     return(
         <div className="go-to-cart right">
+        <span className="number-of-cartItems">
+          {'Cart Items : ' + this.state.cartItems.length} 
+        </span>
           <button className="navigate-to-cart" onClick={() => { 
               this.updateBill()
               this.setState({cartView: true})
