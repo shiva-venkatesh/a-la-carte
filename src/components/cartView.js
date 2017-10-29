@@ -5,7 +5,6 @@ import _ from 'lodash'
 import './css/cartView.css'
 
 export default class CartView extends Component {
-
   constructor(props) {
     super(props)
     this.state = {

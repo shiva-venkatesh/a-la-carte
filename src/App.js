@@ -6,7 +6,6 @@ import Card from './components/card.js'
 import CartView from './components/cartView.js'
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -18,10 +17,11 @@ class App extends Component {
       totalTypeDiscount: 0
     }
     this.renderCartButton = this.renderCartButton.bind(this)
-    this.addItemToCart = this.addItemToCart.bind(this)
     this.renderCartView = this.renderCartView.bind(this)
     this.renderListingPage = this.renderListingPage.bind(this)
     this.updateBill = this.updateBill.bind(this)
+    this.addItemToCart = this.addItemToCart.bind(this)
+    this.removeItemFromCart = this.removeItemFromCart.bind(this)
   }
 
   componentWillMount() {
@@ -59,6 +59,17 @@ class App extends Component {
     console.log(this.state.cartItems)
     this.setState({
       cartItems: [...this.state.cartItems, item]
+    }, () => {
+      this.updateBill()
+    })
+  }
+
+  removeItemFromCart(item) {
+    let modifiedcartItems = this.state.cartItems
+    let itemToBeRemovedIndex = modifiedcartItems.length - 1 - modifiedcartItems.slice().reverse().findIndex( (cartItem) => cartItem.id === item.id );
+    modifiedcartItems.pop(itemToBeRemovedIndex)
+    this.setState({
+      cartItems: [...modifiedcartItems]
     }, () => {
       this.updateBill()
     })
@@ -129,7 +140,7 @@ class App extends Component {
         totalDiscount={this.state.totalDiscount}
         totalBillAmount={this.state.totalBillAmount}
         totalTypeDiscount={this.state.totalTypeDiscount}
-        minusButtonHandler={() => { console.log('minusButtonHandler invoked') }}
+        minusButtonHandler={this.removeItemFromCart}
         plusButtonHandler={this.addItemToCart}
       />
     )
