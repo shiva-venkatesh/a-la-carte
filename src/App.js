@@ -5,8 +5,6 @@ import './App.css'
 import Card from './components/card.js'
 import CartView from './components/cartView.js'
 
-import { Route, Link } from 'react-router-dom'
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -135,17 +133,6 @@ class App extends Component {
     if(!this.state.cartView) {
       return false
     }
-    <Route exact path="/cart" component={
-      <CartView
-        items={this.state.items}
-        cartItems={this.state.cartItems}
-        totalDiscount={this.state.totalDiscount}
-        totalBillAmount={this.state.totalBillAmount}
-        totalTypeDiscount={this.state.totalTypeDiscount}
-        minusButtonHandler={this.removeItemFromCart}
-        plusButtonHandler={this.addItemToCart}
-      />
-    }/>
     return(
       <CartView
         items={this.state.items}
