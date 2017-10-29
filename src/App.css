@@ -91,10 +91,3 @@
   flex-direction: row;
   border-bottom: 1px solid lightgray;
 }
-
-.cart-item {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid lightgray;  
-}

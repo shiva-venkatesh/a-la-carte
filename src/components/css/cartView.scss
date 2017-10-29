@@ -1,0 +1,55 @@
+@import variables;
+
+.cart-item-img {
+	height:45px;
+	width:45px;
+	padding-right: 10px;
+	padding-left: 2px;
+}
+
+.qty-header {
+	padding-left: 345px;
+}
+
+.minus-button {
+	float: right;
+}
+
+.update-buttons {
+	margin: 5px;
+	background: transparent;
+	border: none;
+	outline: 0;
+}
+
+.update-icons {
+	color: gray;
+	font-size: 15px;
+}
+
+.left-container {
+  display: flex;
+  flex: 2 0 0;
+  flex-direction: row;
+}
+
+.item-details, .qty-indicators {
+	display: flex;
+	flex-direction: row;
+}
+
+.right-container {
+  display: flex;
+  flex: 1 0 0;
+}
+
+.chevron-icon {
+	padding-right: 10px;
+}
+
+.cart-item {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid $l-gray;
+}

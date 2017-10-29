@@ -1,46 +1,43 @@
 .cart-item-img {
-	height:45px;
-	width:45px;
-	padding-right: 10px;
-	padding-left: 2px;
-}
+  height: 45px;
+  width: 45px;
+  padding-right: 10px;
+  padding-left: 2px; }
 
 .qty-header {
-	padding-left: 345px;
-}
+  padding-left: 345px; }
 
 .minus-button {
-	float: right;
-}
+  float: right; }
 
 .update-buttons {
-	margin: 5px;
-	background: transparent;
-	border: none;
-	outline: 0;
-}
+  margin: 5px;
+  background: transparent;
+  border: none;
+  outline: 0; }
 
 .update-icons {
-	color: gray;
-	font-size: 15px;
-}
+  color: gray;
+  font-size: 15px; }
 
 .left-container {
   display: flex;
   flex: 2 0 0;
-  flex-direction: row;
-}
+  flex-direction: row; }
 
 .item-details, .qty-indicators {
-	display: flex;
-	flex-direction: row;
-}
+  display: flex;
+  flex-direction: row; }
 
 .right-container {
   display: flex;
-  flex: 1 0 0;
-}
+  flex: 1 0 0; }
 
 .chevron-icon {
-	padding-right: 10px;
-}
+  padding-right: 10px; }
+
+.cart-item {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray; }

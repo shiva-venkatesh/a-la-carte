@@ -1,0 +1,78 @@
+@import variables;
+
+.card-element {
+	height: 250px;
+	border: 3px solid $lightest-gray;
+	width: 235px;
+	margin-bottom: 20px;
+}
+
+.card-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75%;
+}
+
+.second-row {
+	padding-left: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.card-text {
+	display: flex;
+}
+
+.footer-text {
+	padding-left: 5px;
+	padding-top: 5px;
+	display: flex;
+}
+
+.card-footer {
+	display: flex;
+  flex-direction: column;
+ justify-content: flex-start;
+	height: 25%;
+	background-color: $lightest-gray;
+}
+
+.card-img {
+	width: 140px;
+	height: 140px;
+}
+
+.card-CTA-button {
+	border-color: $deep-blue;
+	margin-right: 2px;
+	border-radius: 4px;
+	background-color:  $lightest-gray;
+	color: $deep-blue;
+	padding: 5px;
+	width: 90px;
+	height: 36px;
+	font-size: 12px;
+	outline: 0;
+}
+
+.card-CTA-button:hover {
+	margin-right: 2px;
+	border-radius: 4px;
+	background-color: $deep-blue;
+	color: #ffffff;
+	padding: 5px;
+	width: 90px;
+	height: 36px;
+	font-size: 12px;
+	outline: 0;
+}
+
+.left {
+   -webkit-align-self: flex-start;
+   align-self: flex-start;
+}
+
+.right {
+   margin-left: auto;
+}
