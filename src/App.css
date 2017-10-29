@@ -70,16 +70,6 @@
   display: flex;
 }
 
-.left-container {
-  display: flex;
-  flex: 2 0 0;
-}
-
-.right-container {
-  display: flex;
-  flex: 1 0 0;
-}
-
 .col-8x {
    display: inline-block;
    width: 700px;
@@ -103,7 +93,7 @@
 }
 
 .cart-item {
-  padding-top: 5px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid lightgray;  

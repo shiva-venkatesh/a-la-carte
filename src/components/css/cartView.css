@@ -3,3 +3,39 @@
 	width:45px;
 	padding-right: 10px;
 }
+
+.qty-header {
+	padding-left: 345px;
+}
+
+.minus-button {
+	float: right;
+}
+
+.update-buttons {
+	margin: 5px;
+	background: transparent;
+	border: none;
+	outline: 0;
+}
+
+.update-icons {
+	color: gray;
+	font-size: 15px;
+}
+
+.left-container {
+  display: flex;
+  flex: 2 0 0;
+  flex-direction: row;
+}
+
+.item-details, .qty-indicators {
+	display: flex;
+	flex-direction: row;
+}
+
+.right-container {
+  display: flex;
+  flex: 1 0 0;
+}

@@ -127,6 +127,8 @@ class App extends Component {
         totalDiscount={this.state.totalDiscount}
         totalBillAmount={this.state.totalBillAmount}
         totalTypeDiscount={this.state.totalTypeDiscount}
+        minusButtonHandler={() => { console.log('minusButtonHandler invoked') }}
+        plusButtonHandler={() => { console.log('plusButtonHandler invoked') }}
       />
     )
   }
