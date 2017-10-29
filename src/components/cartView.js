@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import './css/cartView.css'
+
 export default class CartView extends Component {
 
   constructor(props) {
@@ -27,6 +29,7 @@ export default class CartView extends Component {
       return(
           <div className="cart-item fadeIn">
               <div className="left-container">
+                <img className="cart-item-img" src={item.img_url} alt={item.name} />
                 <p>{item.name}</p>
                 <p className="right">{cartItemQty}</p>
               </div>
