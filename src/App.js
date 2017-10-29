@@ -54,11 +54,13 @@ class App extends Component {
       )
   }
 
-  addItemToCart(item) { 
+  addItemToCart(item) {
     console.log(item.name + ' clicked')
     console.log(this.state.cartItems)
     this.setState({
       cartItems: [...this.state.cartItems, item]
+    }, () => {
+      this.updateBill()
     })
   }
 
@@ -128,7 +130,7 @@ class App extends Component {
         totalBillAmount={this.state.totalBillAmount}
         totalTypeDiscount={this.state.totalTypeDiscount}
         minusButtonHandler={() => { console.log('minusButtonHandler invoked') }}
-        plusButtonHandler={() => { console.log('plusButtonHandler invoked') }}
+        plusButtonHandler={this.addItemToCart}
       />
     )
   }

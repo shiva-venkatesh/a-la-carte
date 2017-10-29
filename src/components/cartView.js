@@ -47,7 +47,7 @@ export default class CartView extends Component {
                   <div className="qty-holder">
                     <p className="cart-qty">{cartItemQty}</p>
                   </div>
-                  <button className="plus-button update-buttons" onClick={this.props.plusButtonHandler}>
+                  <button className="plus-button update-buttons" onClick={() => this.props.plusButtonHandler(item)}>
                     <i className="fa fa-plus update-icons" aria-hidden="true"></i>
                   </button>
                 </div>
