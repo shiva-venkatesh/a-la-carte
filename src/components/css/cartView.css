@@ -40,3 +40,7 @@
   display: flex;
   flex: 1 0 0;
 }
+
+.chevron-icon {
+	padding-right: 10px;
+}

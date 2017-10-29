@@ -35,7 +35,7 @@ export default class CartView extends Component {
           return n + (cartItem2.id === item.id);
       }, 0);
       return(
-          <div className="cart-item fadeIn">
+          <div className="cart-item fadeIn" key={item.id}>
               <div className="left-container">
                 <div className="item-details">
                   <img className="cart-item-img" src={item.img_url} alt={item.name} />
@@ -64,8 +64,8 @@ export default class CartView extends Component {
       <div className="container checkout-container">
         <div className="page-heading">
           <p className="cart-page-heading">
-            <i className="fa fa-chevron-left" aria-hidden="true"></i>
-            {' Order Summary'}
+            <i className="fa fa-chevron-left chevron-icon" aria-hidden="true"></i>
+            {'Order Summary'}
           </p>
         </div>
         <div className="summary-body">
