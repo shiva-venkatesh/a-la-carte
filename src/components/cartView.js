@@ -4,6 +4,8 @@ import _ from 'lodash'
 
 import './css/cartView.css'
 
+import PriceContainer from './priceContainer.js'
+
 export default class CartView extends Component {
   constructor(props) {
     super(props)
@@ -80,31 +82,13 @@ export default class CartView extends Component {
             {fetchCartItems}
           </div>
           <div className="col-4x">
-            <div className="sticky-box">
-              <div className="sticky-body">
-                <div className="total-row">
-                  <p className="left">Total</p>
-                </div>
-                <div className="item-count-row">
-                  <p className="left">{'Items(' + this.props.cartItems.length + ')'}</p>
-                  <p className="right">{'$' + this.props.totalBillAmount}</p>
-                </div>
-                <div className="discount-row">
-                  <p className="left">Discount</p>
-                  <p className="right">{'- $' + this.props.totalDiscount}</p>
-                </div>
-                <div className="type-discount-row">
-                  <p className="left">Type discount</p>
-                  <p className="right">{'- $' + this.props.totalTypeDiscount}</p>
-                </div>
-                <div className="checkout-footer">
-                  <div className="order-total">
-                    <p className="left">Order total</p>
-                    <p className="right">{'$' + this.state.finalPrice}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PriceContainer
+              cartItems={this.props.cartItems}
+              totalDiscount={this.props.totalDiscount}
+              totalTypeDiscount={this.props.totalTypeDiscount}
+              totalBillAmount={this.props.totalBillAmount}
+              finalPrice={this.state.finalPrice}
+            />
           </div>
         </div>
       </div>				

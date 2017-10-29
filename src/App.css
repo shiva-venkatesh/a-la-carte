@@ -98,31 +98,3 @@
   flex-direction: row;
   border-bottom: 1px solid lightgray;  
 }
-
-.sticky-box {
-  top: 0;
-  position: sticky;
-  padding-left: 8px;
-  width: 300px;
-  border: 1px solid lightgray;
-}
-
-.sticky-body {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-}
-
-.total-row, .item-count-row, .discount-row, .order-total, .type-discount-row {
-  display: flex;
-  flex-direction: row;
-  margin-right: 15px;
-}
-
-.order-total {
-  border-top: 1px solid lightgray;
-}
-
-.total-row {
-  border-bottom: 1px solid lightgray;
-}
